@@ -1,0 +1,65 @@
+﻿@model IEnumerable< Booking_Webiste.Models.Patient >
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Booking List</h1>
+
+<p>
+    <a class="cta btn btn-secondary" asp-action="Create">Create New <i class="fa-solid fa-circle-plus"></i></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Slots)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No_Of_Persons)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slots)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.No_Of_Persons)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.PatientId"><i class="fa-solid fa-pen-to-square"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.PatientId"><i class="fa-regular fa-eye"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.PatientId"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
