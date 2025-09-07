@@ -30,7 +30,7 @@ namespace Booking_Webiste.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PatientId"));
 
-                    b.Property<DateOnly>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("date")
                         .HasColumnName("Date");
 
@@ -46,7 +46,7 @@ namespace Booking_Webiste.Migrations
 
                     b.Property<string>("No_Of_Persons")
                         .IsRequired()
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("varChar(20)")
                         .HasColumnName("No_Of_Persons");
 
                     b.Property<string>("Phone")

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Booking_Webiste.Migrations
 {
     /// <inheritdoc />
-    public partial class BookingCreateDB : Migration
+    public partial class Initailcreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,9 +20,9 @@ namespace Booking_Webiste.Migrations
                     PatientName = table.Column<string>(type: "varchar(100)", nullable: false),
                     Email = table.Column<string>(type: "varchar(200)", nullable: false),
                     PhoneNo = table.Column<string>(type: "varchar(20)", nullable: false),
-                    Date = table.Column<DateOnly>(type: "date", nullable: false),
+                    Date = table.Column<DateTime>(type: "date", nullable: false),
                     Slots = table.Column<string>(type: "varchar(200)", nullable: false),
-                    No_Of_Persons = table.Column<string>(type: "varchar(20)", nullable: false)
+                    No_Of_Persons = table.Column<string>(type: "varChar(20)", nullable: false)
                 },
                 constraints: table =>
                 {

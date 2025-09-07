@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking_Webiste.Migrations
 {
     [DbContext(typeof(PatientDBContext))]
-    [Migration("20240504094549_BookingCreateDB")]
-    partial class BookingCreateDB
+    [Migration("20250907074608_Initailcreate")]
+    partial class Initailcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace Booking_Webiste.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PatientId"));
 
-                    b.Property<DateOnly>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("date")
                         .HasColumnName("Date");
 
@@ -49,7 +49,7 @@ namespace Booking_Webiste.Migrations
 
                     b.Property<string>("No_Of_Persons")
                         .IsRequired()
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("varChar(20)")
                         .HasColumnName("No_Of_Persons");
 
                     b.Property<string>("Phone")
